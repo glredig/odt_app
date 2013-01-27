@@ -7,8 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<%= link_to "ODT", root_path %>
+		<div id="signin_container">
+			<%= form_for :user do |f| %>
+				<%= f.label :username %>
+				<%= f.text_field :username %>
+				<%= f.label :password %>
+				<%= f.text_field :password %>
+				<%= f.submit "Sign in" %>
+			<% end %>
+		</div>
+		<div class="clear"></div>
+		<ul class="top_nav">
+			<li><%= link_to "home", root_path %></li>
+			<li><%= link_to "about", about_path %></li>
+			<li><%= link_to "lessons", lessons_path %></li>
+		</ul>
+	</header>
 
-<%= yield %>
+	<section class="centered_content">
 
+		<%= yield %>
+
+	</section>
+
+	<footer>
+		links
+	</footer>
 </body>
 </html>

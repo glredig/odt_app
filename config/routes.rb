@@ -1,4 +1,11 @@
 OdtApp::Application.routes.draw do
+  get "home/index"
+
+  root :to => 'home#index'
+
+  match '/about' => 'static_pages#about'
+  match '/lessons' => 'static_pages#lessons'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

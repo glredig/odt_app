@@ -1,0 +1,41 @@
+h1, h2, h3, h4, h5, p, span, a, label, input {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=text] {
+	border-radius: 4px;
+	height: 24px;
+	border: 1px solid #777777;
+	border-bottom: 1px solid #aaaaaa;
+	color: #ffffff;
+	line-height: 24px;
+	font-size: .8em;
+	padding: 0 5px;
+}
+
+input[type=submit] {
+	border-radius: 2px;
+	padding: 0 5px;
+	height: 24px;
+	border: none;
+}
+
+.inline {
+	display: inline;
+}
+
+p {
+ 	color: #3f4350;
+ 	line-height: 26px; 
+ 	font-size: 14px;
+ }
+
+ section.centered_content {
+ 	max-width: 960px;
+ 	margin: 0 auto;
+ }
+
+ .clear {
+ 	clear: both;
+ }
+
