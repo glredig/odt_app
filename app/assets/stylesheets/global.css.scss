@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5, p, span, a, label, input {
+h1, h2, h3, h4, h5, p, span, a, label, input, table {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
@@ -28,14 +28,45 @@ p {
  	color: #3f4350;
  	line-height: 26px; 
  	font-size: 14px;
- }
+}
 
- section.centered_content {
- 	max-width: 960px;
- 	margin: 0 auto;
- }
+section.centered_content {
+	max-width: 960px;
+	margin: 0 auto;
+}
 
- .clear {
- 	clear: both;
- }
+.clear {
+	clear: both;
+}
 
+tr.odd {
+	background-color: #ffffff;
+}
+
+tr.even {
+	background-color: #eeeeff;
+}
+
+.center {
+	text-align: center;
+}
+
+.w10 {
+	width: 10%;
+}
+
+.w20 {
+	width: 20%;
+}
+
+.w30 {
+	width: 30%;
+}
+
+.w40 {
+	width: 40%;
+}
+
+.w50 {
+	width: 50%;
+}
