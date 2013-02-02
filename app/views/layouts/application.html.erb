@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OdtApp</title>
+  <title>Online Drum Teacher | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,13 +10,6 @@
 	<header>
 		<%= link_to "ODT", root_path %>
 		<div id="signin_container">
-			<%= form_for :user do |f| %>
-				<%= f.label :username %>
-				<%= f.text_field :username %>
-				<%= f.label :password %>
-				<%= f.text_field :password %>
-				<%= f.submit "Sign in" %>
-			<% end %>
 		</div>
 		<div class="clear"></div>
 		<ul class="top_nav">
@@ -26,12 +19,15 @@
 		</ul>
 	</header>
 
-	<section class="centered_content">
-
-		<%= yield %>
-
+	<section>
+		<div class="centered_content">
+			<% flash.each do |key, value| %>
+				<div class="alert alert-<%= key %>"><%= value %></div>
+			<% end %>
+			<%= yield %>
+			<div id="push"></div>
+		</div>
 	</section>
-
 	<footer>
 		links
 	</footer>

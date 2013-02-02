@@ -1,13 +1,12 @@
-h1, h2, h3, h4, h5, p, span, a, label, input, table {
+body, h1, h2, h3, h4, h5, p, span, a, label, input, table {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
 	border-radius: 4px;
 	height: 24px;
 	border: 1px solid #777777;
 	border-bottom: 1px solid #aaaaaa;
-	color: #ffffff;
 	line-height: 24px;
 	font-size: .8em;
 	padding: 0 5px;
@@ -30,9 +29,12 @@ p {
  	font-size: 14px;
 }
 
-section.centered_content {
+div.centered_content {
 	max-width: 960px;
-	margin: 0 auto;
+	min-height: 100%;
+	height: auto !important;
+	margin: 80px auto -400px;
+	height: 100%;
 }
 
 .clear {
