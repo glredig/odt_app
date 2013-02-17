@@ -132,10 +132,10 @@ describe User do
     before { @user.save }
 
     let!(:older_blogpost) do
-      FactoryGirl.create(:blogpost, user: @user, created_at: 1.day.ago)
+      FactoryGirl.create(:blogpost, user: @user, title: "Title1", created_at: 1.day.ago)
     end
     let!(:newer_blogpost) do
-      FactoryGirl.create(:blogpost, user: @user, created_at: 1.hour.ago)
+      FactoryGirl.create(:blogpost, user: @user, title: "Title2", created_at: 1.hour.ago)
     end
 
     it "should have the right blogposts in the right order" do

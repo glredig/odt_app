@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Blogpost do
 	let(:user) { FactoryGirl.create(:user) }
-	before { @blogpost = user.blogposts.build(content: "Lorem ipsum") }
+	before { @blogpost = user.blogposts.build(content: "Lorem ipsum", title: "Title1") }
 
 
 	subject { @blogpost }
@@ -10,6 +10,7 @@ describe Blogpost do
 	it { should respond_to(:content) }
 	it { should respond_to(:user_id) }
 	it { should respond_to(:user) }
+	it { should respond_to(:title) }
 	its(:user) { should == user }
 
 	it { should be_valid }
@@ -21,6 +22,11 @@ describe Blogpost do
 
 	describe "with blank content" do
 		before { @blogpost.content = " " }
+		it { should_not be_valid }
+	end
+
+	describe "with blank title" do
+		before { @blogpost.title = " " }
 		it { should_not be_valid }
 	end
 
