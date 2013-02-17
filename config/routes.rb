@@ -12,6 +12,8 @@ OdtApp::Application.routes.draw do
   match '/lessons' => 'static_pages#lessons'
   match '/contact' => 'static_pages#contact'
 
+  resources :blogposts, :path => :blog
+
   match '/signup', to: 'users#new'
 
   match '/signin', to: 'sessions#new'

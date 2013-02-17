@@ -1,0 +1,7 @@
+<% provide(:title, "Blog") %>
+<h1>Blog</h1><%= link_to "Create new entry", new_blogpost_path %>
+<ul>
+	<% @blogposts.each_with_index do |post, index| %>
+		<li><%= link_to "Blog entry ##{index + 1}", blogpost_path(post) %> (Posted on <%= post.created_at %>)</li>
+	<% end %>
+</ul>

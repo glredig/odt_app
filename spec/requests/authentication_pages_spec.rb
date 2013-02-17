@@ -100,6 +100,11 @@ describe "Authentication" do
 				before { delete user_path(user) }
 				specify { response.should redirect_to(root_path) }
 			end
+
+			# describe "trying to create a new blog post" do
+			# 	before { visit new_blogpost_path }
+			# 	it { should_not have_selector('h1', text: 'New Blog entry')}
+			# end
 		end
 
 		describe "as an admin user" do

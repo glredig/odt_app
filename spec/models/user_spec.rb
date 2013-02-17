@@ -13,6 +13,7 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:blogposts) }
 
   it { should be_valid }
 
@@ -125,4 +126,29 @@ describe User do
 
     it { should be_admin }
   end
+
+  describe "blogpost associations" do
+
+    before { @user.save }
+
+    let!(:older_blogpost) do
+      FactoryGirl.create(:blogpost, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_blogpost) do
+      FactoryGirl.create(:blogpost, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right blogposts in the right order" do
+      @user.blogposts.should == [newer_blogpost, older_blogpost]
+    end
+
+    it "should destroy associated blogposts" do
+      blogposts = @user.blogposts.dup
+      @user.destroy
+      blogposts.should_not be_empty
+      blogposts.each do |blogpost|
+        Blogpost.find_by_id(blogpost.id).should be_nil
+      end
+    end
+  end 
 end

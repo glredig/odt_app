@@ -1,3 +1,26 @@
-home_index GET /home/index(.:format) home#index
-      root     /                     home#index
-     about     /about(.:format)      static_pages#about
+        users GET    /users(.:format)          users#index
+              POST   /users(.:format)          users#create
+     new_user GET    /users/new(.:format)      users#new
+    edit_user GET    /users/:id/edit(.:format) users#edit
+         user GET    /users/:id(.:format)      users#show
+              PUT    /users/:id(.:format)      users#update
+              DELETE /users/:id(.:format)      users#destroy
+     sessions POST   /sessions(.:format)       sessions#create
+  new_session GET    /sessions/new(.:format)   sessions#new
+      session DELETE /sessions/:id(.:format)   sessions#destroy
+    users_new GET    /users/new(.:format)      users#new
+   home_index GET    /home/index(.:format)     home#index
+         root        /                         home#index
+        about        /about(.:format)          static_pages#about
+      lessons        /lessons(.:format)        static_pages#lessons
+      contact        /contact(.:format)        static_pages#contact
+    blogposts GET    /blog(.:format)           blogposts#index
+              POST   /blog(.:format)           blogposts#create
+ new_blogpost GET    /blog/new(.:format)       blogposts#new
+edit_blogpost GET    /blog/:id/edit(.:format)  blogposts#edit
+     blogpost GET    /blog/:id(.:format)       blogposts#show
+              PUT    /blog/:id(.:format)       blogposts#update
+              DELETE /blog/:id(.:format)       blogposts#destroy
+       signup        /signup(.:format)         users#new
+       signin        /signin(.:format)         sessions#new
+      signout DELETE /signout(.:format)        sessions#destroy
