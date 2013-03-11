@@ -6,4 +6,8 @@ class Blogpost < ActiveRecord::Base
   belongs_to :user
 
   default_scope order: 'blogposts.created_at DESC'
+
+  def blog_title
+  	self.title || "(No title)"
+  end
 end

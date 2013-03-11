@@ -1,7 +1,9 @@
 <% provide(:title, "Blog") %>
-<h1>Blog</h1><%= link_to "Create new entry", new_blogpost_path %>
-<ul>
-	<% @blogposts.each_with_index do |post, index| %>
-		<li><%= link_to post.title || "(No title)", blogpost_path(post) %> (Posted on <%= post.created_at %>)</li>
-	<% end %>
+<h1>Blog</h1>
+<% if signed_in? && admin? %>
+	<%= link_to "Create new entry", new_blogpost_path %>
+<% end %>
+<%= will_paginate @blogposts %>
+<ul id="blog_list">
+	<%= render @blogposts %>
 </ul>

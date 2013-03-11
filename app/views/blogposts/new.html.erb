@@ -1,13 +1,13 @@
 <% provide(:title, "New Blog post") %>
-<h1>New Blog entry</h1>
+<h1>New Blog entry</h1><br><br>
 
 <%= form_for(@blogpost) do |f| %>
 	
-	<%= f.label :title %>
-	<%= f.text_field :title %>
+	<%= f.label :title %><br>
+	<%= f.text_field :title, class: "blog_title_field" %><br><br>
 	
-	<%= f.label :content %>
-	<%= f.text_area :content %>
+	<%= f.label :content %><br>
+	<%= f.text_area :content, class: "blog_content_field" %><br><br>
 
 	<%= f.submit "Post" %>
 	

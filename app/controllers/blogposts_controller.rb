@@ -1,8 +1,8 @@
 class BlogpostsController < ApplicationController
-	before_filter :signed_in_user
+	before_filter :signed_in_user, only: [:new, :edit, :create, :update, :destroy]
 
 	def index
-		@blogposts = Blogpost.all
+		@blogposts = Blogpost.paginate(page: params[:page])
 	end
 
 	def show
@@ -11,6 +11,10 @@ class BlogpostsController < ApplicationController
 
 	def new
 		@blogpost = Blogpost.new
+	end
+
+	def edit
+		@blogpost = Blogpost.find(params[:id])
 	end
 
 	def create
@@ -24,7 +28,21 @@ class BlogpostsController < ApplicationController
 		end
 	end
 
-	def destroy
+	def update 
+		@blogpost = Blogpost.find(params[:id])
 
+		if @blogpost.update_attributes(params[:blogpost])
+			flash[:success] = "Changes saved!"
+			redirect_to blogposts_path
+		else
+			flash[:alert] = "Changes weren't saved."
+			redirect_to edit_blogpost_path(blogpost)
+		end
+	end
+
+	def destroy
+		Blogpost.find(params[:id]).destroy
+		flash[:success] = "Post deleted."
+		redirect_to blogposts_path
 	end
 end

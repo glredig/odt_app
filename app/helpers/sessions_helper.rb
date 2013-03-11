@@ -21,6 +21,14 @@ module SessionsHelper
 		user == current_user
 	end
 
+	def premium?
+		current_user && current_user.premium == true
+	end
+
+	def admin?
+		current_user && current_user.admin == true
+	end
+
 	def sign_out
 		self.current_user = nil
 		cookies.delete(:remember_token)
