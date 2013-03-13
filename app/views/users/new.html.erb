@@ -4,20 +4,21 @@
 <%= form_for(@user) do |f| %>
 
 	<%= render 'shared/error_messages' %>
-	<%= f.label :name %>
+	<%= f.label :name %><br>
 	<%= f.text_field :name, id: "signup_name"  %>
-	<br>
+	<br><br>
 
-	<%= f.label :email %>
+	<%= f.label :email %><br>
 	<%= f.text_field :email, id: "signup_email"  %>
-	<br>
+	<br><br>
 
-	<%= f.label :password %>
+	<%= f.label :password %><br>
 	<%= f.password_field :password, id: "signup_password" %>
-	<br>
+	<br><br>
 
-	<%= f.label :password_confirmation, "Confirmation" %>
+	<%= f.label :password_confirmation, "Re-type password" %><br>
 	<%= f.password_field :password_confirmation, id: "signup_confirmation" %>
+	<br><br>
 
 	<%= f.submit "Create my account" %>
 
