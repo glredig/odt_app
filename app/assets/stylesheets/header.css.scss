@@ -20,27 +20,76 @@ header {
 		float: right;
 		margin-top: 10px;
 
-		li {
+		li.top_level {
 			display: inline-block;
 			height: 30px;
 			width: 100px;
 			text-align: center;
 			line-height: 30px;
 			border-radius: 2px;
-			color: #ffffff;
+			color: #dddddd;
 			font-weight: bold;
-			font-size: 1.1em;
+			font-size: 18px;
 			letter-spacing: 1px;
 			font-variant: small-caps;
 
-			a {
-				color: #ffffff;
+			& > a {
+				display: inline-block;
+				height: 30px;
+				line-height: 30px;
+				width: 100px;
+				color: #dddddd;
 				text-decoration: none;
+			}
+
+			& > a:hover {
+				color: #ffffff;
+				line-height: 30px;
+				font-size: 19px;
+				text-shadow: 2px 2px 3px #333333;
 			}
 		}
 
-		li:hover {
-			background-color: #595869;
+		li.has_submenu:hover {
+			.sub_menu {
+				display: block;
+			}
+		}
+	}
+
+	.sub_menu {
+		display: none;
+		position: absolute;
+		top: 30px;
+		left: -40px;
+		width: 120px;
+		background-color: #eeeeee;
+		border: 1px solid #dddddd;
+		box-shadow: 3px 3px 8px -2px #cccccc;
+
+		li.second_level {
+			width: 120px;
+
+			a, a:visited {
+				font-variant: normal;
+				font-weight: normal;
+				display: block;
+				width: 120px;
+				font-size: 13px;
+				color: #666677;
+				border-bottom: 1px solid #dddddd;
+				letter-spacing: 0;
+			}
+
+			a:hover {
+				text-decoration: none;
+				background-color: #dddddd;
+				color: #333344;
+			}
+		}
+
+		li:last-child a {
+			border-bottom: none;
 		}
 	}
 }

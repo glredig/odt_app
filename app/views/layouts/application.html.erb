@@ -13,32 +13,59 @@
 		</div>
 		<div class="clear"></div>
 		<ul class="top_nav">
-			<li><%= link_to "home", root_path %></li>
-			<li><%= link_to "about", about_path %></li>
-			<li><%= link_to "lessons", lessons_path %></li>
-			<li><%= link_to "blog", blogposts_path %></li>
+			<li class="top_level"><%= link_to "home", root_path %></li>
+			<li class="top_level"><%= link_to "about", about_path %></li>
+			<li class="top_level"><%= link_to "lessons", lessons_path %></li>
+			<li class="top_level"><%= link_to "blog", blogposts_path %></li>
 			<% if signed_in? %>
-				<li><%= link_to "users", users_path %></li>
-				<li><%= link_to "profile", user_path(current_user) %></li>
-				<li><%= link_to "settings", edit_user_path(current_user) %></li>
-				<li><%= link_to "sign out", signout_path, method: "delete" %></li>
+				<% if admin? %>
+					<li class="top_level"><%= link_to "users", users_path %></li>
+				<% end %>
+				<li class="pos_rel top_level has_submenut">
+					account
+					<ul class="sub_menu">
+						<li class="second_level"><%=link_to "Profile", user_path(current_user) %></li>
+						<li class="second_level"><%=link_to "Settings", edit_user_path(current_user) %></li>
+						<li class="second_level"><%=link_to "Sign Out", signout_path, method: "delete" %></li>
+					</ul>
+				</li>
 			<% else %>
-				<li><%= link_to "sign in", signin_path %></li>
+				<li class="top_level"><%= link_to "sign in", signin_path %></li>
 			<% end %>
 		</ul>
 	</header>
 
-	<section>
-		<div class="centered_content">
-			<% flash.each do |key, value| %>
-				<div class="alert alert-<%= key %>"><%= value %></div>
-			<% end %>
-			<%= yield %>
-			<div id="push"></div>
+	<div class="centered_content">
+		<% flash.each do |key, value| %>
+			<div class="alert alert-<%= key %>"><%= value %></div>
+		<% end %>
+		<%= yield %>
+		<div id="push"></div>
+	</div>
+	<div id="footer">
+		<div id="footer_image">
+			<div class="footer_content">
+				<div class="footer_section">
+					<ul>
+						<li><%= link_to "Home", root_path %></li>
+						<li><%= link_to "About", about_path %></li>
+						<li><%= link_to "Lessons", lessons_path %></li>
+						<li><%= link_to "Blog", blogposts_path %></li>
+						<% if signed_in? %>
+							<li><%= link_to "Users", users_path %></li>
+							<li><%= link_to "Profile", user_path(current_user) %></li>
+							<li><%= link_to "Settings", edit_user_path(current_user) %></li>
+							<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+						<% else %>
+							<li><%= link_to "Sign in", signin_path %></li>
+						<% end %>
+					</ul>
+				</div>
+				<div class="footer_section">
+					Social Links
+				</div>
+			</div>
 		</div>
-	</section>
-	<footer>
-		links
-	</footer>
+	</div>
 </body>
 </html>
