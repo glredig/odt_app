@@ -1,0 +1,12 @@
+<% provide(:title, "Video Lessons") %>
+<h1>Video Lessons</h1>
+<% if signed_in? && admin? %>
+  <%= link_to "Create new entry", new_video_lesson_path %>
+<% end %>
+<ul id="video_lesson_list">
+  <% if @video_lessons.present? %>		
+  	<%= render @video_lessons %>
+  <% else %>
+  	<p>There are no Video Lessons right now. Check back soon.</p>
+  <% end %>
+</ul>

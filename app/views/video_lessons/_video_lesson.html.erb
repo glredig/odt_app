@@ -1,0 +1,19 @@
+<li>
+	<%= puts video_lesson.inspect %>
+	<h2 class="post_title"><%= video_lesson.title %></h2> <span class="post_date">Posted on <%= video_lesson.created_at.strftime("%-m/%e/%Y") %></span>
+	<% if admin? %>
+		<div class="settings_trigger pos_fr pos_rel">
+			<%= image_tag "settings.png", id: "#{video_lesson}", class: "pos_fr" %>
+			<div class="post_settings">
+				<%= link_to "Edit", edit_video_lesson_path(video_lesson) %>
+				<%= link_to "Delete", video_lesson, method: :delete, data: { confirm: "Are you sure you want to delete this video lesson?" } %>
+			</div>
+		</div>
+	<% end %>
+	<hr />
+	<div class="blog_content">
+		<%= truncate_html(video_lesson.description.html_safe, length: 800) %>
+		<br>
+		<%= link_to "Watch this video", video_lesson, class: "pos_fr" %>
+	</div>
+</li>

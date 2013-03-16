@@ -23,14 +23,13 @@ describe "Authentication" do
 			before { sign_in user }
 
 			it { should have_selector('title', text: user.name) }
-			it { should have_link('users', href: users_path) }
-			it { should have_link('profile', href: user_path(user)) }
-			it { should have_link('settings', href: edit_user_path(user)) }
-			it { should have_link('sign out', href: signout_path) }
+			it { should have_link('Profile', href: user_path(user)) }
+			it { should have_link('Settings', href: edit_user_path(user)) }
+			it { should have_link('Sign Out', href: signout_path) }
 			it { should_not have_link('sign in', href: signin_path) }
 
 			describe "followed by sign out" do
-				before  { click_link "sign out" }
+				before  { click_link "Sign Out" }
 				it { should have_link("sign in") }
 			end
 		end

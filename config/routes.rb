@@ -1,4 +1,7 @@
 OdtApp::Application.routes.draw do
+  resources :video_lessons
+
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

@@ -7,6 +7,7 @@ gem 'will_paginate', '3.0.3'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
+gem "truncate_html", "~> 0.9.2"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -35,9 +36,6 @@ end
 group :production do
 	gem 'pg', '0.12.2'
 end
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
