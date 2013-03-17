@@ -1,7 +1,7 @@
 <li>
 	<%= puts video_lesson.inspect %>
 	<h2 class="post_title"><%= video_lesson.title %></h2> <span class="post_date">Posted on <%= video_lesson.created_at.strftime("%-m/%e/%Y") %></span>
-	<% if admin? %>
+	<% if signed_in? %>
 		<div class="settings_trigger pos_fr pos_rel">
 			<%= image_tag "settings.png", id: "#{video_lesson}", class: "pos_fr" %>
 			<div class="post_settings">

@@ -21,3 +21,8 @@ doc/
 .project
 .idea
 .DS_Store
+config/local_env.yml
+public/uploads/tmp/20130316-1555-71703-4920/VL0001.mp4
+public/uploads/tmp/20130316-1636-72658-7104/VL0001.mp4
+public/uploads/tmp/20130316-1645-72658-7616/VL0001.mp4
+public/uploads/tmp/20130316-1650-72742-1092/VL0001.mp4

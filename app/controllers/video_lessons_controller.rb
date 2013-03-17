@@ -3,6 +3,8 @@ class VideoLessonsController < ApplicationController
   
   def index
     @video_lessons = VideoLesson.all
+    @uploader = VideoLesson.new.video
+    @uploader.success_action_redirect = new_video_lesson_url
   end
 
   def show
@@ -10,7 +12,7 @@ class VideoLessonsController < ApplicationController
   end
 
   def new
-    @video_lesson = VideoLesson.new
+    @video_lesson = VideoLesson.new(key: params[:key])
   end
 
   def edit
@@ -20,14 +22,10 @@ class VideoLessonsController < ApplicationController
   def create
     @video_lesson = VideoLesson.new(params[:video_lesson])
 
-    respond_to do |format|
-      if @video_lesson.save
-        format.html { redirect_to @video_lesson, notice: 'Video lesson was successfully created.' }
-        format.json { render json: @video_lesson, status: :created, location: @video_lesson }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @video_lesson.errors, status: :unprocessable_entity }
-      end
+    if @video_lesson.save
+      redirect_to @video_lesson, success: 'Video lesson was successfully created.'
+    else
+      render action: "new" 
     end
   end
 
@@ -36,15 +34,12 @@ class VideoLessonsController < ApplicationController
   def update
     @video_lesson = VideoLesson.find(params[:id])
 
-    respond_to do |format|
-      if @video_lesson.update_attributes(params[:video_lesson])
-        format.html { redirect_to @video_lesson, notice: 'Video lesson was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @video_lesson.errors, status: :unprocessable_entity }
-      end
+    if @video_lesson.update_attributes(params[:video_lesson])
+      redirect_to @video_lesson, success: 'Video lesson was successfully updated.'
+    else
+      render action: "edit" 
     end
+
   end
 
   # DELETE /video_lessons/1
@@ -53,9 +48,7 @@ class VideoLessonsController < ApplicationController
     @video_lesson = VideoLesson.find(params[:id])
     @video_lesson.destroy
 
-    respond_to do |format|
-      format.html { redirect_to video_lessons_url }
-      format.json { head :no_content }
-    end
+    redirect_to video_lessons_url 
+    head :no_content 
   end
 end

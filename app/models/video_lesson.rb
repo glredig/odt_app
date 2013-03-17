@@ -3,4 +3,8 @@ class VideoLesson < ActiveRecord::Base
   validates_presence_of :title
 
   mount_uploader :video, VideoUploader
+
+  def video_name 
+  	File.basename(video.path || video.filename) if video
+  end
 end

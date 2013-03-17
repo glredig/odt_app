@@ -1,7 +1,10 @@
 <% provide(:title, "Video Lessons") %>
 <h1>Video Lessons</h1>
-<% if signed_in? && admin? %>
-  <%= link_to "Create new entry", new_video_lesson_path %>
+<% if signed_in? %>
+  <%= direct_upload_form_for @uploader do |f| %>
+  	<p><%= f.file_field :video %></p>
+  	<p><%= f.submit "Upload Video" %></p>
+  <% end %>
 <% end %>
 <ul id="video_lesson_list">
   <% if @video_lessons.present? %>		

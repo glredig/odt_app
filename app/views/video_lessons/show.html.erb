@@ -11,8 +11,8 @@
 </p>
 
 <p>
-	<%= link_to @video_lesson.title, video.video_url.to_s %>
-
+	<%= link_to @video_lesson.title, @video_lesson.video_url.to_s %>
+<p>
 
 <%= link_to 'Edit', edit_video_lesson_path(@video_lesson) %> |
 <%= link_to 'Back', video_lessons_path %>
