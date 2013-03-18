@@ -18,6 +18,7 @@
 	border-radius: 12px;
 	border: 1px solid #878787;
 	padding: 30px 5px 5px 5px;
+	background-color: #dddddd;
 
 	.category_title {
 		position: absolute;
@@ -41,7 +42,7 @@
 	}
 
 	&.blog {
-		background-color: #87938a;
+		border-color: #87938a;
 
 		.cat_box_blog {
 			background: url('cat_box_blog.png') no-repeat;

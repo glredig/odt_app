@@ -4,17 +4,24 @@
 <%= form_for(@user) do |f| %>
 	<%= render 'shared/error_messages' %>
 
-	<%= f.label :name %>
+	<%= f.label :name %><br>
 	<%= f.text_field :name %>
+	<br><br>
 
-	<%= f.label :email %>
+	<%= f.label :email %><br>
 	<%= f.text_field :email %>
-
-	<%= f.label :current_password %>
+	<br><br><br>
+	<hr class="w500" />
+	<br>
+	<p>In order to save your changes, please enter your current password below and click save</p>
+	<br>
+	<%= f.label :current_password %><br>
 	<%= f.password_field :password %>
+	<br><br>
 
-	<%= f.label :password_confirmation %>
+	<%= f.label :password_confirmation %><br>
 	<%= f.password_field :password_confirmation %>
+	<br><br>
 
 	<%= f.submit "Save changes" %>
 <% end %>

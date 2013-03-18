@@ -29,8 +29,6 @@ class VideoLessonsController < ApplicationController
     end
   end
 
-  # PUT /video_lessons/1
-  # PUT /video_lessons/1.json
   def update
     @video_lesson = VideoLesson.find(params[:id])
 
@@ -42,8 +40,6 @@ class VideoLessonsController < ApplicationController
 
   end
 
-  # DELETE /video_lessons/1
-  # DELETE /video_lessons/1.json
   def destroy
     @video_lesson = VideoLesson.find(params[:id])
     @video_lesson.destroy

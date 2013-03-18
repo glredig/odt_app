@@ -7,3 +7,25 @@
 	<p>For those who are looking to take the next step in advancing their percussion abilities, we offer premium content to members of the site. A large collection of videos and written lessons are available only to members.</p>
 	<p>Check out the store page to purchase Curtis Cooper's books and visit the webcam lessons page to learn more about 1 on 1 lessons with Curtis via Skype, oovoo, etc.</p>
 </section>
+<section>
+	<div class="widget blog">
+		<div class="category_title">
+			<%= link_to "Blog", blogposts_path, class: "cat_box_blog" %>
+		</div>
+		<ul class="category_box">
+			<% if @blogposts.nil? %>
+				There are no blog entries.
+			<% else %>
+				<% @blogposts.each_with_index do |blogpost, index| %>
+					<% if index < 3 %>
+						<li>
+							<%= link_to raw('<span>#{blogpost.title}</span>') %>
+						</li>
+					<% end %>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+	<div class="clear"></div>
+</section>
+

@@ -14,4 +14,9 @@ FactoryGirl.define do
 		content "Lorem ipsum"
 		user
 	end
+
+	factory :video_lesson do
+		title "Video Title"
+		description "Video Description"
+	end
 end

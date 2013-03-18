@@ -11,6 +11,11 @@
 		<%= link_to "ODT", root_path %>
 		<div id="signin_container">
 		</div>
+		<% if signed_in? %>
+			<div id="welcome_message">
+				<span>Welcome,</span> <%= current_user.name %>
+			</div>
+		<% end %>
 		<div class="clear"></div>
 		<ul class="top_nav">
 			<li class="top_level"><%= link_to "home", root_path %></li>
@@ -22,7 +27,7 @@
 					<li class="top_level"><%= link_to "users", users_path %></li>
 				<% end %>
 				<li class="pos_rel top_level has_submenu">
-					account
+					my account
 					<ul class="sub_menu">
 						<li class="second_level"><%=link_to "Profile", user_path(current_user) %></li>
 						<li class="second_level"><%=link_to "Settings", edit_user_path(current_user) %></li>

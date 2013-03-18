@@ -9,14 +9,23 @@ html, body {
 
 h1, h2, h3, h4, h5 {
 	color: #923a23;
+	font-family: Tahoma, arial, sans-serif;
+	margin: 15px 0;
 }
 
 h1 {
+	font-size: 34px;
 	margin: 10px 0px;
+	font-family: 'AlexBrushRegular', arial, helvetica, sans-serif;
+}
+
+h2 {
+	font-size: 20px;
 }
 
 body { 
-	background: url('back_rpt.png') repeat;
+	background-color: #eaeaea;
+	// background: url('back_rpt.png') repeat;
 }
 
 input[type=text], input[type=password] {
@@ -166,4 +175,7 @@ tr.even {
 
 .w50 {
 	width: 50%;
+}
+.w500 {
+	width: 500px;
 }
