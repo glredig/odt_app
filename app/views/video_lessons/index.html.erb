@@ -1,6 +1,6 @@
 <% provide(:title, "Video Lessons") %>
 <h1>Video Lessons</h1>
-<% if signed_in? %>
+<% if signed_in? && admin? %>
   <%= direct_upload_form_for @uploader do |f| %>
   	<p><%= f.file_field :video %></p>
   	<p><%= f.submit "Upload Video" %></p>

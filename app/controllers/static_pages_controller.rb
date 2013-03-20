@@ -1,9 +1,5 @@
 class StaticPagesController < ApplicationController
 
-	def home
-		@blogposts = Blogpost.all
-	end
-
 	def about
 		@curtis_pic_1 = "https://onlinedrumteacher.s3.amazonaws.com/images/curtis_about_1.jpg"
 		@curtis_pic_2 = "https://onlinedrumteacher.s3.amazonaws.com/images/curtis_about_2.jpg"

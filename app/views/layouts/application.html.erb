@@ -52,6 +52,7 @@
 		<div id="footer_image">
 			<div class="footer_content">
 				<div class="footer_section">
+					<h1>Get around...</h1>
 					<ul>
 						<li><%= link_to "Home", root_path %></li>
 						<li><%= link_to "About", about_path %></li>
@@ -68,7 +69,10 @@
 					</ul>
 				</div>
 				<div class="footer_section">
-					Social Links
+					<h1>Socialize...</h1>
+					<%= link_to image_tag('facebook_fix.png'), "", class: "social_media" %>
+					<%= link_to image_tag('twitter.png'), "", class: "social_media" %>
+					<%= link_to image_tag('youtube.png'), "", class: "social_media" %>
 				</div>
 			</div>
 		</div>

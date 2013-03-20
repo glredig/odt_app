@@ -13,16 +13,47 @@
 			<%= link_to "Blog", blogposts_path, class: "cat_box_blog" %>
 		</div>
 		<ul class="category_box">
-			<% if @blogposts.nil? %>
-				There are no blog entries.
-			<% else %>
+			<%= @test %>
+			<% if @blogposts.present? %>
 				<% @blogposts.each_with_index do |blogpost, index| %>
 					<% if index < 3 %>
 						<li>
-							<%= link_to raw('<span>#{blogpost.title}</span>') %>
+							<%= link_to(blogpost) do  %>
+								<span class='link_title'><%= truncate_html(blogpost.title, length: 35) %></span>
+								<span class='date_added'><%= blogpost.created_at.strftime("%-m/%e/%Y") %></span>
+								<br>
+								<p><%= truncate_html(blogpost.content, length: 100) %></p>
+							<% end %>
 						</li>
 					<% end %>
 				<% end %>
+				<%= link_to "View All", blogposts_path, class: "view_all" %>
+			<% else %>
+				There are no blog entries.
+			<% end %>
+		</ul>
+	</div>
+	<div class="widget lesson">
+		<div class="category_title">
+			<%= link_to "Lessons", video_lessons_path, class: "cat_box_lesson" %>
+		</div>
+		<ul class="category_box">
+			<% if @video_lessons.present? %>
+				<% @video_lessons.each_with_index do |video_lesson, index| %>
+					<% if index < 3 %>
+						<li>
+							<%= link_to(video_lesson) do  %>
+								<span class='link_title'><%= truncate_html(video_lesson.title, length: 35) %></span>
+								<span class='date_added'><%= video_lesson.created_at.strftime("%-m/%e/%Y") %></span>
+								<br>
+								<p><%= truncate_html(video_lesson.description, length: 100) %></p>
+							<% end %>
+						</li>
+					<% end %>
+				<% end %>
+				<%= link_to "View All", video_lessons_path, class: "view_all" %>
+			<% else %>
+				There are no video lessons.
 			<% end %>
 		</ul>
 	</div>

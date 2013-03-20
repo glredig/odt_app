@@ -1,5 +1,5 @@
 #footer, #push {
-	background-color: #242e4b;
+	background: #242e4b url('footer_back1.png');
 	height: 400px;
 	width: 100%;
 }
@@ -9,7 +9,7 @@
 }
 
 #footer_image {
-	background: url('footer_under.png') no-repeat bottom right;
+	background: url('footer_under3.png') no-repeat bottom right;
 	height: 100%;
 }
 
@@ -22,11 +22,16 @@
 .footer_section {
 	float: left;
 	margin-left: 20px;
-	padding-top: 15px;
+	padding-top: 5px;
 	width: 220px;
 	height: 270px;
-	margin-top: 50px;
-	border-right: 1px solid #555566;
+	margin-top: 20px;
+	border-right: 1px solid #2f2f3f;
+
+	h1 {
+		color: #5f94a8;
+		margin-top: 0;
+	}
 
 	ul li {
 		font-size: 14px;
@@ -36,6 +41,16 @@
 			line-height: 20px;
 			color: #cccccc;
 			text-decoration: none;
+		}
+	}
+
+	a.social_media {
+		display: block;
+		height: 100px;
+		float: left;
+
+		img {
+			height: 50px;
 		}
 	}
 }
