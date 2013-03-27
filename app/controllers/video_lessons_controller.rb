@@ -3,8 +3,6 @@ class VideoLessonsController < ApplicationController
   
   def index
     @video_lessons = VideoLesson.all
-    @uploader = VideoLesson.new.video
-    @uploader.success_action_redirect = new_video_lesson_url
   end
 
   def show
@@ -12,7 +10,7 @@ class VideoLessonsController < ApplicationController
   end
 
   def new
-    @video_lesson = VideoLesson.new(key: params[:key])
+    @video_lesson = VideoLesson.new
   end
 
   def edit
