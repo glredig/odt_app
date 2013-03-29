@@ -22,6 +22,7 @@
 			<li class="top_level"><%= link_to "about", about_path %></li>
 			<li class="top_level"><%= link_to "lessons", lessons_path %></li>
 			<li class="top_level"><%= link_to "blog", blogposts_path %></li>
+			<li class="top_level"><%= link_to "news", news_items_path %></li>
 			<% if signed_in? %>
 				<% if admin? %>
 					<li class="top_level"><%= link_to "users", users_path %></li>

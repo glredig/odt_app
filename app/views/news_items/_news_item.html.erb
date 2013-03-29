@@ -1,0 +1,18 @@
+<li>
+	<h2 class="post_title"><%= news_item.title %></h2> <span class="post_date">Posted on <%= news_item.created_at.strftime("%-m/%e/%Y") %></span>
+	<% if admin? %>
+		<div class="settings_trigger pos_fr pos_rel">
+			<%= image_tag "settings.png", id: "#{news_item}", class: "pos_fr" %>
+			<div class="post_settings">
+				<%= link_to "Edit", edit_news_item_path(news_item) %>
+				<%= link_to "Delete", news_item, method: :delete, data: { confirm: "Are you sure you want to delete this news item?" } %>
+			</div>
+		</div>
+	<% end %>
+	<hr />
+	<div class="blog_content">
+		<%= truncate_html(news_item.content.html_safe, length: 800) %>
+		<br>
+		<%= link_to "Read more", news_item, class: "pos_fr" %>
+	</div>
+</li>

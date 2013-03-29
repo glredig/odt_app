@@ -57,6 +57,30 @@
 			<% end %>
 		</ul>
 	</div>
+	<div class="widget news">
+		<div class="category_title">
+			<%= link_to "News", news_items_path, class: "cat_box_news" %>
+		</div>
+		<ul class="category_box">
+			<% if @news_items.present? %>
+				<% @news_items.each_with_index do |news_item, index| %>
+					<% if index < 3 %>
+						<li>
+							<%= link_to(news_item) do  %>
+								<span class='link_title'><%= truncate_html(news_item.title, length: 35) %></span>
+								<span class='date_added'><%= news_item.created_at.strftime("%-m/%e/%Y") %></span>
+								<br>
+								<p><%= truncate_html(news_item.content, length: 100) %></p>
+							<% end %>
+						</li>
+					<% end %>
+				<% end %>
+				<%= link_to "View All", news_items_path, class: "view_all" %>
+			<% else %>
+				There are no news items.
+			<% end %>
+		</ul>
+	</div>
 	<div class="clear"></div>
 </section>
 

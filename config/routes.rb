@@ -1,4 +1,7 @@
 OdtApp::Application.routes.draw do
+  resources :news_items
+
+
   resources :video_lessons
 
 

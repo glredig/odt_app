@@ -1,0 +1,9 @@
+<% provide(:title, "News") %>
+<h1>News</h1>
+<% if signed_in? && admin? %>
+  <%= link_to "Create new entry", new_news_item_path %>
+<% end %>
+<%= will_paginate @news_items %>
+<ul id="blog_list">
+  <%= render @news_items if @news_items.present? %>
+</ul>

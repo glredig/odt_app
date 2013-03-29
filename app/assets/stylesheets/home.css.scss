@@ -58,6 +58,15 @@
 		}
 	}
 
+	&.news {
+		margin-left: 15px;
+		border-color: #aaaaaa;
+
+		.cat_box_news {
+			background: url('cat_box_news.png') no-repeat;
+		}
+	}
+
 	.category_box {
 
 		li {
