@@ -1,7 +1,33 @@
 #slideshow {
 	max-width: 960px;
 	height: 500px;
-	background-color: #eeeeee;
+	background: url('ODTSlide.png') no-repeat -60px 0;
+	position: relative;
+	color: #555555;
+
+	.slide {
+		padding: 10px 20px;
+		position: absolute;
+		width: 370px;
+		// background: url('trans.png');
+		top: 80px;
+		right: 50px;
+		// box-shadow: 0 0 8px #aaaaaa;
+
+		ul {
+			margin: 25px 50px 25px 20px;
+			list-style-type: disc;
+
+			li {
+				font-size: 32px;
+				margin-top: 15px;
+				letter-spacing: 1px;
+				color: #555555;
+				font-family: 'AlexBrushRegular', arial, helvetica, sans-serif;
+				text-shadow: 1px 1px 1px #ffffff;
+			}
+		}
+	}
 }
 
 #widget_spacer {
@@ -13,12 +39,12 @@
 	width: 290px;
 	float: left;
 	height: 265px;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 45px;
+	margin-bottom: 150px;
 	border-radius: 12px;
-	border: 1px solid #878787;
+	border: 1px solid #e0e0e0;
 	padding: 30px 5px 5px 5px;
-	background-color: #dddddd;
+	background-color: #e0e0e0;
 
 	.category_title {
 		position: absolute;
@@ -42,7 +68,7 @@
 	}
 
 	&.blog {
-		border-color: #aaaaaa;
+		border-color: #c0c0c0;
 
 		.cat_box_blog {
 			background: url('cat_box_blog.png') no-repeat;
@@ -51,7 +77,7 @@
 
 	&.lesson {
 		margin-left: 15px;
-		border-color: #aaaaaa;
+		border-color: #c0c0c0;
 
 		.cat_box_lesson {
 			background: url('cat_box_lessons.png') no-repeat;
@@ -60,7 +86,7 @@
 
 	&.news {
 		margin-left: 15px;
-		border-color: #aaaaaa;
+		border-color: #c0c0c0;
 
 		.cat_box_news {
 			background: url('cat_box_news.png') no-repeat;
