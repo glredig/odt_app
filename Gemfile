@@ -7,7 +7,7 @@ gem 'will_paginate', '3.0.3'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
-gem 'carrierwave_direct'
+gem 'nested_form'
 gem 'sidekiq'
 gem "truncate_html", "~> 0.9.2"
 

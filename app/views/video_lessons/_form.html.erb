@@ -10,9 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <%= f.hidden_field :key %>
-
-  <p>File: <%= @video_lesson.video_name %></p>
+  
   <br>
   <div class="field">
     <%= f.label :title %><br>
@@ -24,6 +22,13 @@
     <%= f.text_area :description %>
   </div>
   <br><br>
+
+  <%= f.fields_for :videos do |builder| %>
+    <%= render 'video_fields', f: builder %>
+  <% end %>
+  <br><br>
+  <%= link_to_add_fields "Add Video", f, :videos %>
+  <br><br> 
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,11 +1,9 @@
 class VideoLesson < ActiveRecord::Base
-  attr_accessible :description, :title, :video, :remote_video_url
+  attr_accessible :description, :title, :videos_attributes
   validates_presence_of :title
   validates_presence_of :description
 
-  mount_uploader :video, VideoUploader
+  has_many :videos, dependent: :destroy
 
-  def video_name 
-  	File.basename(video.path || video.filename) if video
-  end
+  accepts_nested_attributes_for :videos, allow_destroy: true
 end

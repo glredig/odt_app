@@ -11,8 +11,8 @@
 </p>
 
 <p>
-	<%= link_to "Download " + @video_lesson.title, @video_lesson.video_url.to_s %>
-<p>
+  <%= video_tag([@mp4_video_url, @ogg_video_url], controls: true) %>
+</p>
 <br><br>
 <%= link_to 'Edit', edit_video_lesson_path(@video_lesson) %> |
 <%= link_to 'Back', video_lessons_path %>

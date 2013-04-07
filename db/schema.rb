@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130329024330) do
+ActiveRecord::Schema.define(:version => 20130407000845) do
 
   create_table "blogposts", :force => true do |t|
     t.text     "content",    :limit => 255
@@ -52,7 +52,17 @@ ActiveRecord::Schema.define(:version => 20130329024330) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "videos", :force => true do |t|
+    t.string   "video_url"
+    t.string   "video_format"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "video_lesson_id"
     t.string   "video"
   end
+
+  add_index "videos", ["video_lesson_id", "created_at"], :name => "index_videos_on_video_lesson_id_and_created_at"
 
 end

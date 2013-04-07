@@ -3,16 +3,26 @@ class VideoLessonsController < ApplicationController
   
   def index
     @video_lessons = VideoLesson.all
-    @uploader = VideoLesson.new.video
-    @uploader.success_action_redirect = new_video_lesson_url
   end
 
   def show
     @video_lesson = VideoLesson.find(params[:id])
+    @mp4_video_url = ''
+    @ogg_video_url = ''
+    @mp4_video = Video.mp4_format.where(video_lesson_id: params[:id]).first
+    @ogg_video = Video.ogg_format.where(video_lesson_id: params[:id]).first
+
+    if @mp4_video.present?
+      @mp4_video_url = @mp4_video.video_url.to_s
+    end
+
+    if @ogg_video.present?
+      @ogg_video_url = @ogg_video.video_url.to_s
+    end  
   end
 
   def new
-    @video_lesson = VideoLesson.new(key: params[:key])
+    @video_lesson = VideoLesson.new
   end
 
   def edit

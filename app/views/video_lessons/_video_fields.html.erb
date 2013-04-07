@@ -1,0 +1,6 @@
+<fieldset>
+  <%= f.file_field :video %>
+  <%= f.select(:video_format, [['MP4', 'MP4'], ['OGG', 'OGG']]) %>
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Remove Video" %>
+</fieldset>
