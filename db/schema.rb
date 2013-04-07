@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(:version => 20130407000845) do
     t.string   "video_format"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "video_lesson_id"
     t.string   "video"
+    t.integer  "video_lesson_id"
   end
 
   add_index "videos", ["video_lesson_id", "created_at"], :name => "index_videos_on_video_lesson_id_and_created_at"
