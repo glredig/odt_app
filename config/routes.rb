@@ -1,9 +1,10 @@
 OdtApp::Application.routes.draw do
+  resources :written_lessons
+
   resources :news_items
 
 
   resources :video_lessons
-
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

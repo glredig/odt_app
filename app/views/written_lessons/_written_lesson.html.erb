@@ -1,0 +1,18 @@
+<li>
+	<h2 class="post_title"><%= written_lesson.title %></h2> <span class="post_date">Posted on <%= written_lesson.created_at.strftime("%-m/%e/%Y") %></span>
+	<% if signed_in? && admin? %>
+		<div class="settings_trigger pos_fr pos_rel">
+			<%= image_tag "settings.png", id: "#{written_lesson}", class: "pos_fr" %>
+			<div class="post_settings">
+				<%= link_to "Edit", edit_written_lesson_path(written_lesson) %>
+				<%= link_to "Delete", written_lesson, method: :delete, data: { confirm: "Are you sure you want to delete this written lesson?" } %>
+			</div>
+		</div>
+	<% end %>
+	<hr />
+	<div class="blog_content">
+		<%= truncate_html(written_lesson.content.html_safe, length: 800) %>
+		<br>
+		<%= link_to "Read this lesson", written_lesson, class: "pos_fr" %>
+	</div>
+</li>

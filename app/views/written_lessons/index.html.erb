@@ -1,0 +1,12 @@
+<% provide(:title, "Written Lessons") %>
+<h1>Written Lessons</h1>
+<% if signed_in? && admin? %>
+  <%= link_to "Add New Written Lesson", new_written_lesson_path %>
+<% end %>
+<ul id="written_lesson_list">
+    <% if @written_lessons.present? %>
+      <%= render @written_lessons %>
+    <% else %>
+      <p>THere are no Written Lessons right now. Check back soon.</p>
+    <% end %>
+</ul>

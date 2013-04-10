@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407000845) do
+ActiveRecord::Schema.define(:version => 20130407234839) do
 
   create_table "blogposts", :force => true do |t|
     t.text     "content",    :limit => 255
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(:version => 20130407000845) do
   end
 
   add_index "blogposts", ["user_id", "created_at"], :name => "index_blogposts_on_user_id_and_created_at"
+
+  create_table "images", :force => true do |t|
+    t.string   "image"
+    t.integer  "written_lesson_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "images", ["written_lesson_id", "created_at"], :name => "index_images_on_written_lesson_id_and_created_at"
 
   create_table "news_items", :force => true do |t|
     t.string   "title"
@@ -64,5 +73,13 @@ ActiveRecord::Schema.define(:version => 20130407000845) do
   end
 
   add_index "videos", ["video_lesson_id", "created_at"], :name => "index_videos_on_video_lesson_id_and_created_at"
+
+  create_table "written_lessons", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

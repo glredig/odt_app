@@ -1,0 +1,13 @@
+<h1><%= @written_lesson.title %></h1>
+<hr />
+<span class="post_date pos_fr"><%= @written_lesson.created_at.strftime("%B %d, %Y") %></span>
+
+<div class="mt30">
+	<% @images.each do |img| %>
+		<%= link_to(image_tag(img.image_url(:thumb)), img.image_url, target: "_blank") %>
+	<% end %>
+</div>
+
+<p class="mt30"><%= @written_lesson.content.html_safe %></p>
+
+<%= link_to 'Back to list', written_lessons_path, class: "pos_fr" %>
