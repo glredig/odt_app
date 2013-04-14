@@ -1,12 +1,33 @@
 header {
+	position: absolute;
+	z-index: 100;
+	top: 0;
+	left: 0;
 	width: 100%;
 	background-color: #203163;
-	height: 70px;
+	height: 60px;
 	color: #ffffff;
+	border-bottom: 1px solid #dddddd;
+	box-shadow: 0 1px 5px #999999;
+
+	.odt_home_link {
+		display: inline-block;
+		width: 300px;
+		float: left;
+		margin-top: 10px;
+		margin-left: 25px;
+		font-size: 30px;
+		line-height: 60px;
+		color: #dddddd;
+
+		span {
+			font-weight: bold;
+			color: #5f94a8;
+			font-style: italic;
+		}
+	}
 
 	div#signin_container {
-		float: right;
-		margin-top: 10px;
 		margin-right: 20px;
 		font-size: .8em;
 
@@ -24,7 +45,7 @@ header {
 		li.top_level {
 			display: inline-block;
 			height: 30px;
-			width: 100px;
+			width: 90px;
 			text-align: center;
 			line-height: 30px;
 			border-radius: 2px;
@@ -38,7 +59,7 @@ header {
 				display: inline-block;
 				height: 30px;
 				line-height: 30px;
-				width: 100px;
+				width: 90px;
 				color: #dddddd;
 				text-decoration: none;
 			}
@@ -52,7 +73,7 @@ header {
 		}
 
 		li.has_submenu {
-			width: 115px;
+			width: 105px;
 
 			&:hover {
 				color: #ffffff;
@@ -108,7 +129,7 @@ header {
 #welcome_message {
 
 	span {
-		color: #cccccc;
+		color: #5f94a8;
 		font-family: 'AlexBrushRegular', Arial, Helvetica, sans-serif;
 		font-size: 20px;
 		line-height: 20px;
@@ -119,5 +140,5 @@ header {
 	font-weight: normal;
 	font-size: 12px;	
 	margin-top: 10px;
-	margin-right: 5px;
+	margin-right: 25px;
 }

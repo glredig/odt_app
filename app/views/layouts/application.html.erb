@@ -8,38 +8,40 @@
 </head>
 <body>
 	<header>
-		<%= link_to "ODT", root_path %>
+		<%= link_to raw("Online<span>Drum</span>Teacher"), root_path, class: "odt_home_link" %>
 		<div id="signin_container">
 		</div>
-		<% if signed_in? %>
-			<div id="welcome_message">
-				<span>Welcome,</span> <%= current_user.name %>
-			</div>
-		<% end %>
-		<div class="clear"></div>
-		<ul class="top_nav">
-			<li class="top_level"><%= link_to "home", root_path %></li>
-			<li class="top_level"><%= link_to "about", about_path %></li>
-			<li class="top_level"><%= link_to "lessons", lessons_path %></li>
-			<li class="top_level"><%= link_to "blog", blogposts_path %></li>
-			<li class="top_level"><%= link_to "news", news_items_path %></li>
+		<div class="pos_fr">
 			<% if signed_in? %>
-				<% if admin? %>
-					<li class="top_level"><%= link_to "users", users_path %></li>
-				<% end %>
-				<li class="pos_rel top_level has_submenu">
-					my account
-					<ul class="sub_menu">
-						<li class="second_level"><%=link_to "Profile", user_path(current_user) %></li>
-						<li class="second_level"><%=link_to "Settings", edit_user_path(current_user) %></li>
-						<li class="second_level"><%=link_to "Sign Out", signout_path, method: "delete" %></li>
-					</ul>
-				</li>
-			<% else %>
-				<li class="top_level"><%= link_to "sign in", signin_path %></li>
-				<li class="top_level"><%= link_to "sign up", new_user_path %></li>
+				<div id="welcome_message">
+					<span>Welcome,</span> <%= current_user.name %>
+				</div>
 			<% end %>
-		</ul>
+			<div class="clear"></div>
+			<ul class="top_nav">
+				<li class="top_level"><%= link_to "home", root_path %></li>
+				<li class="top_level"><%= link_to "about", about_path %></li>
+				<li class="top_level"><%= link_to "lessons", lessons_path %></li>
+				<li class="top_level"><%= link_to "blog", blogposts_path %></li>
+				<li class="top_level"><%= link_to "news", news_items_path %></li>
+				<% if signed_in? %>
+					<% if admin? %>
+						<li class="top_level"><%= link_to "users", users_path %></li>
+					<% end %>
+					<li class="pos_rel top_level has_submenu">
+						my account
+						<ul class="sub_menu">
+							<li class="second_level"><%=link_to "Profile", user_path(current_user) %></li>
+							<li class="second_level"><%=link_to "Settings", edit_user_path(current_user) %></li>
+							<li class="second_level"><%=link_to "Sign Out", signout_path, method: "delete" %></li>
+						</ul>
+					</li>
+				<% else %>
+					<li class="top_level"><%= link_to "sign in", signin_path %></li>
+					<li class="top_level"><%= link_to "sign up", new_user_path %></li>
+				<% end %>
+			</ul>
+		</div>
 	</header>
 
 	<div class="centered_content">
