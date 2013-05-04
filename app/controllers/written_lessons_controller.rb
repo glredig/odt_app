@@ -39,5 +39,13 @@ class WrittenLessonsController < ApplicationController
   def destroy
     @written_lesson = WrittenLesson.find(params[:id])
     @written_lesson.destroy
+
+    feed = LessonFeed.where("model_name = :model_name AND item_id = :item_id", 
+      {:model_name => "WrittenLesson", :item_id => params[:id] }).first
+    puts "#" * 100
+    puts feed
+    feed.destroy
+
+    redirect_to written_lessons_url
   end
 end

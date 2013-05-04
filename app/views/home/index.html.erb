@@ -49,23 +49,38 @@
 	</div>
 	<div class="widget lesson">
 		<div class="category_title">
-			<%= link_to "Lessons", video_lessons_path, class: "cat_box_lesson" %>
+			<%= link_to "Lessons", lessons_path, class: "cat_box_lesson" %>
 		</div>
 		<ul class="category_box">
-			<% if @video_lessons.present? %>
-				<% @video_lessons.each_with_index do |video_lesson, index| %>
+			<% if @lesson_feeds.present? %>
+				<% @lesson_feeds.each_with_index do |lesson_feed, index| %>
 					<% if index < 3 %>
-						<li>
-							<%= link_to(video_lesson) do  %>
-								<span class='link_title'><%= truncate_html(video_lesson.title, length: 35) %></span>
-								<span class='date_added'><%= video_lesson.created_at.strftime("%-m/%e/%Y") %></span>
-								<br>
-								<p><%= truncate_html(video_lesson.description, length: 100) %></p>
-							<% end %>
-						</li>
+						<% if lesson_feed.model_name == 'VideoLesson' %>
+							<% lesson = VideoLesson.find(lesson_feed.item_id) %>
+							<li>
+								<%= link_to(lesson) do  %>
+									<span class='link_title'><%= truncate_html(lesson.title, length: 30) %></span>
+									<span class='date_added'><%= lesson.created_at.strftime("%-m/%e/%Y") %></span>
+									<%= image_tag "icon_feed_video.png", height: "13", class: "lesson_type_icon", title: "Video Lesson" %>
+									<br>
+									<p><%= truncate_html(lesson.description, length: 100) %></p>
+								<% end %>
+							</li>
+						<% else %>
+							<% lesson = WrittenLesson.find(lesson_feed.item_id) %>
+							<li>
+								<%= link_to(lesson) do  %>
+									<span class='link_title'><%= truncate_html(lesson.title, length: 30) %></span>
+									<span class='date_added'><%= lesson.created_at.strftime("%-m/%e/%Y") %></span>
+									<%= image_tag "icon_feed_written.png", height: "13", class: "lesson_type_icon", title: "Written Lesson" %>
+									<br>
+									<p><%= truncate_html(lesson.content, length: 100) %></p>
+								<% end %>
+							</li>
+						<% end %>
 					<% end %>
 				<% end %>
-				<%= link_to "View All", video_lessons_path, class: "view_all" %>
+				<%= link_to "View All", lessons_path, class: "view_all" %>
 			<% else %>
 				There are no video lessons.
 			<% end %>

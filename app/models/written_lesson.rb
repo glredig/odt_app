@@ -7,4 +7,13 @@ class WrittenLesson < ActiveRecord::Base
   has_many :images, dependent: :destroy
 
   accepts_nested_attributes_for :images, allow_destroy: true
+
+  after_save :create_feed_item
+  
+  def create_feed_item
+  	feed = LessonFeed.new
+  	feed[:model_name] = 'WrittenLesson'
+  	feed[:item_id] = self.id
+  	feed.save
+  end
 end

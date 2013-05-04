@@ -38,7 +38,7 @@
 	position: relative;
 	width: 290px;
 	float: left;
-	height: 265px;
+	height: 280px;
 	margin-top: 45px;
 	margin-bottom: 150px;
 	border-radius: 12px;
@@ -101,7 +101,7 @@
 			a {
 				display: block;
 				width: 270px;
-				height: 65px;
+				height: 70px;
 				padding: 3px 10px 8px 10px;
 				text-decoration: none;
 				font-family: tahoma, arial, sans-serif;
@@ -111,6 +111,11 @@
 					font-size: 12px;
 					line-height: 19px;
 					color: #40424b;
+				}
+
+				img.lesson_type_icon {
+					margin-top: 5px;
+					margin-left: 10px;
 				}
 
 				.date_added {
