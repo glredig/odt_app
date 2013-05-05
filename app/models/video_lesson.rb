@@ -1,5 +1,5 @@
 class VideoLesson < ActiveRecord::Base
-  attr_accessible :description, :title, :videos_attributes
+  attr_accessible :description, :title, :premium_only, :videos_attributes
   validates_presence_of :title
   validates_presence_of :description
 

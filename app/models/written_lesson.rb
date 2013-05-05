@@ -1,5 +1,5 @@
 class WrittenLesson < ActiveRecord::Base
-  attr_accessible :title, :content, :images_attributes
+  attr_accessible :title, :content, :premium_only, :images_attributes
 
   validates_presence_of :title
   validates_presence_of :content

@@ -1,6 +1,13 @@
-<li>
-	<%= link_to user.name, user %>
-	<% if current_user.admin? && !current_user?(user) %>
-		<%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" } %>
-	<% end %>
-</li>
+<tr class="<%= cycle('odd', 'even') %>">
+	<td><%= link_to user.name, user %></td>
+	<td>
+		<% if current_user.admin? %>
+			<%= (user.premium || user.admin) ? "Premium Account" : "Basic Account" %>
+		<% end %>
+	</td>
+	<td>
+		<% if current_user.admin? && !current_user?(user) %>
+			<%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?" } %>
+		<% end %>
+	</td>
+</tr>

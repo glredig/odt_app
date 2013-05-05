@@ -43,11 +43,6 @@ describe "Authentication" do
 			describe "in the Users controller" do
 				before { visit edit_user_path(user) }
 				it { should have_selector('title', text: 'Sign in') }
-
-				describe "visiting the user index" do
-					before { visit users_path }
-					it { should have_selector('title', text: 'Sign in') }
-				end
 			end
 
 			describe "submitting to the update action" do
