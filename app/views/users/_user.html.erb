@@ -2,7 +2,13 @@
 	<td><%= link_to user.name, user %></td>
 	<td>
 		<% if current_user.admin? %>
-			<%= (user.premium || user.admin) ? "Premium Account" : "Basic Account" %>
+			<% if user.premium %>
+				Premium Account (<%= link_to "Make account basic", user_path(user, premium: true), method: :put %>)
+			<% elsif user.admin %>
+				Admin
+			<% else %>
+				Basic Account (<%= link_to "Make account premium", user_path(user, premium: true), method: :put %>)
+			<% end %>
 		<% end %>
 	</td>
 	<td>

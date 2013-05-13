@@ -10,9 +10,18 @@
 		</div>
 	<% end %>
 	<hr />
+	<% if video_lesson.premium_only %>
+		<div class="lesson_type_message">members only video</div>
+	<% end %>
 	<div class="blog_content">
 		<%= truncate_html(video_lesson.description.html_safe, length: 800) %>
 		<br>
-		<%= link_to "Watch this video", video_lesson, class: "pos_fr" %>
+		<% if video_lesson.premium_only %>
+			<% if signed_in? && (admin? || premium?) %>
+				<%= link_to "Watch this video", video_lesson, class: "pos_fr" %>
+			<% else %>
+				<%= link_to "Sign up now!", "", class: "pos_fr" %>
+			<% end %>
+		<% end %>
 	</div>
 </li>

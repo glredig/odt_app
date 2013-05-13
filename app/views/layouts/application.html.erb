@@ -8,7 +8,9 @@
 </head>
 <body>
 	<header>
-		<%= link_to raw("Online<span>Drum</span>Teacher"), root_path, class: "odt_home_link" %>
+		<%= link_to root_path do %>
+			<div class="odt_home_link">Drum Teacher</div>
+		<% end %>
 		<div id="signin_container">
 		</div>
 		<div class="pos_fr">
