@@ -51,7 +51,7 @@ class UsersController < ApplicationController
 
   def make_premium
       if current_user.admin?
-        @user = Membership.where(user_id: params[:user_id]).first
+        @user = Membership.where(user_id: params[:user_id].to_i).first
         @user.premium = true
         @user.save!
       end
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
     def make_basic
       if current_user.admin?
-        @user = Membership.where(user_id: params[:user_id]).first
+        @user = Membership.where(user_id: params[:user_id].to_i).first
         @user.premium = false
         @user.save!
       end
