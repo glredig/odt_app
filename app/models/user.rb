@@ -13,9 +13,16 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  after_save :create_membership
+
   private
 
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
+    end
+
+    def create_membership
+      membership = Membership.new(user_id: self.id)
+      membership.save!
     end
 end

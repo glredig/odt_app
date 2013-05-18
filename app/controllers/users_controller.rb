@@ -49,6 +49,26 @@ class UsersController < ApplicationController
     
   end
 
+  def make_premium
+      if current_user.admin?
+        @user = Membership.where(user_id: params[:user_id]).first
+        @user.premium = true
+        @user.save!
+      end
+
+      redirect_to users_path
+    end
+
+    def make_basic
+      if current_user.admin?
+        @user = Membership.where(user_id: params[:user_id]).first
+        @user.premium = false
+        @user.save!
+      end
+
+      redirect_to users_path
+    end 
+
   private
 
     def correct_user

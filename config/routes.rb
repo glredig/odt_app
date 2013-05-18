@@ -7,6 +7,10 @@ OdtApp::Application.routes.draw do
   resources :video_lessons
 
   resources :users
+
+  match '/make_premium' => 'users#make_premium', as: 'make_premium'
+  match '/make_basic' => 'users#make_basic', as: 'make_basic'
+
   resources :sessions, only: [:new, :create, :destroy]
 
   get "users/new"

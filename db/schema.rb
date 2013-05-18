@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505223728) do
+ActiveRecord::Schema.define(:version => 20130518061410) do
 
   create_table "blogposts", :force => true do |t|
     t.text     "content",    :limit => 255
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20130505223728) do
     t.string   "item_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.string   "user_id"
+    t.boolean  "premium",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "news_items", :force => true do |t|

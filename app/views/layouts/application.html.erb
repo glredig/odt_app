@@ -14,11 +14,11 @@
 		<div id="signin_container">
 		</div>
 		<div class="pos_fr">
-			<% if signed_in? %>
-				<div id="welcome_message">
+			<div id="welcome_message">
+				<% if signed_in? %>
 					<span>Welcome,</span> <%= current_user.name %>
-				</div>
-			<% end %>
+				<% end %>
+			</div>
 			<div class="clear"></div>
 			<ul class="top_nav">
 				<li class="top_level"><%= link_to "home", root_path %></li>
@@ -26,6 +26,7 @@
 				<li class="top_level"><%= link_to "lessons", lessons_path %></li>
 				<li class="top_level"><%= link_to "blog", blogposts_path %></li>
 				<li class="top_level"><%= link_to "news", news_items_path %></li>
+				<li class="top_level"><%= link_to "contact", contact_path %></li>
 				<% if signed_in? %>
 					<% if admin? %>
 						<li class="top_level"><%= link_to "users", users_path %></li>
