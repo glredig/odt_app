@@ -11,13 +11,21 @@ h1, h2, h3, h4, h5 {
 	color: #923a23;
 	font-family: Tahoma, arial, sans-serif;
 	margin: 15px 0;
+	font-weight: normal;
+	letter-spacing: 1px;
 }
 
-h1 {
+h1.scripty {
+	letter-spacing: 0;
 	font-weight: normal;
 	font-size: 34px;
 	margin: 10px 0px;
 	font-family: 'AlexBrushRegular', arial, helvetica, sans-serif;
+}
+
+h1 {
+	font-size: 24px;
+	line-height: 40px;
 }
 
 h2 {
@@ -96,6 +104,7 @@ p {
 }
 
 div.centered_content {
+	padding: 25px 0 0;
 	max-width: 960px;
 	min-height: 100%;
 	height: auto !important;

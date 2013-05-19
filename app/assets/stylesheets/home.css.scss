@@ -1,17 +1,18 @@
 #slideshow {
 	max-width: 960px;
 	height: 500px;
-	background: url('ODTSlide.png') no-repeat -60px 0;
+	background: url('ODTSlide.png') no-repeat -60px -35px;
 	position: relative;
 	color: #555555;
+	overflow: hidden;
 
 	.slide {
-		padding: 10px 20px;
+		padding: 0 20px 10px 20px;
 		position: absolute;
 		width: 370px;
-		// background: url('trans.png');
-		top: 80px;
+		top: 50px;
 		right: 50px;
+		color: #555555;
 		// box-shadow: 0 0 8px #aaaaaa;
 
 		ul {
@@ -19,13 +20,32 @@
 			list-style-type: disc;
 
 			li {
-				font-size: 32px;
+				display: none;
+				font-size: 25px;
 				margin-top: 15px;
 				letter-spacing: 1px;
 				color: #555555;
-				font-family: 'AlexBrushRegular', arial, helvetica, sans-serif;
+				font-family: Arial, helvetica, sans-serif;
 				text-shadow: 1px 1px 1px #ffffff;
 			}
+		}
+	}
+
+	.slideshow_logo {
+		background: url('banner_image_inv.png') no-repeat;
+		display: inline-block;
+		width: 400px;
+		height: 55px;
+		font-family: 'AlexBrushRegular', arial, helvetica, sans-serif;		
+		font-size: 37px;
+		line-height: 60px;
+		color: #203163;
+		padding: 2px 0 0 8px;
+
+		span {
+			font-weight: bold;
+			color: #5f94a8;
+			font-style: italic;
 		}
 	}
 }
