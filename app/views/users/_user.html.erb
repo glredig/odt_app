@@ -2,7 +2,7 @@
 	<td><%= link_to user.name, user %></td>
 	<td>
 		<% if current_user.admin? %>
-			<% if Membership.where(user_id: user.id.to_i).first.premium %>
+			<% if Membership.where(user_id: user.id).first.premium %>
 				Premium Account (<%= link_to "Make account basic", make_basic_path(:user_id => user.id) %>)
 			<% elsif user.admin %>
 				Admin
