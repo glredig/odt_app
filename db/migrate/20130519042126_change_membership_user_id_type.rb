@@ -1,9 +1,9 @@
-class ChangeMembershipUserIdType < ActiveRecord::Migration
+class RemoveMembershipUserId < ActiveRecord::Migration
   def up
-  	change_column :memberships, :user_id, :integer
+  	remove_column :memberships, :user_id
   end
 
   def down
-  	change_column :memberships, :user_id, :string
+  	add_column :memberships, :user_id, :string
   end
 end
