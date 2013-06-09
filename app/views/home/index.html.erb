@@ -1,8 +1,11 @@
 <section>
 	<div id="slideshow">
+		<div style="margin-top: 30px; font-weight: bold; letter-spacing: -1px; font-size: 70px; line-height: 50px; font-variant: small-caps; color: #ffffff;">
+			learn faster.<br>
+			play better.<br>
+			<span style="color: #51819a;" >online.</span><br>
+		</div>
 		<div id="slide_1" class="slide">
-			<h1 class="slideshow_logo">Drum Teacher</h1>
-			Learn how to play the drums from an accomplished musician through the internet. Grow your skills through the use of:
 			<ul>
 				<li>Video Lessons</li>
 				<li>Written Lessons</li>
@@ -13,18 +16,9 @@
 	</div>
 </section>
 <section>
-	<h1 class="scripty mt30">First time here?</h1>
-	<p>Online Drum Teacher is a learning resource for aspiring drummers and advanced drummers alike. We're excited to bring you written lessons, video lessons and a regularly updated blog all for free!</p>
-	<p>For those who are looking to take the next step in advancing their percussion abilities, we offer premium content to members of the site. A large collection of videos and written lessons are available only to members.</p>
-	<p>Check out the store page to purchase Curtis Cooper's books and visit the webcam lessons page to learn more about 1 on 1 lessons with Curtis via Skype, oovoo, etc.</p>
-</section>
-<section>
-	<h1 class="scripty mt30">Get started</h1>
-</section>
-<section>
 	<div class="widget blog">
 		<div class="category_title">
-			<%= link_to "Blog", blogposts_path, class: "cat_box_blog" %>
+			<%= link_to raw('<i class="icon-comment"></i>'), blogposts_path, title: "Blog" %>
 		</div>
 		<ul class="category_box">
 			<%= @test %>
@@ -49,7 +43,7 @@
 	</div>
 	<div class="widget lesson">
 		<div class="category_title">
-			<%= link_to "Lessons", lessons_path, class: "cat_box_lesson" %>
+			<%= link_to raw('<i class="icon-facetime-video"></i>'), lessons_path, title: "Lessons" %>
 		</div>
 		<ul class="category_box">
 			<% if @lesson_feeds.present? %>
@@ -88,7 +82,7 @@
 	</div>
 	<div class="widget news">
 		<div class="category_title">
-			<%= link_to "News", news_items_path, class: "cat_box_news" %>
+			<%= link_to raw('<i class="icon-bullhorn"></i>'), news_items_path, title: "News" %>
 		</div>
 		<ul class="category_box">
 			<% if @news_items.present? %>
@@ -111,5 +105,11 @@
 		</ul>
 	</div>
 	<div class="clear"></div>
+</section>
+<section class="mb30">
+	<h1 class="mt30">high quality online drum instruction from a professional</h1>
+	<p>Online Drum Teacher is a learning resource for aspiring drummers and advanced drummers alike. We're excited to bring you written lessons, video lessons and a regularly updated blog all for free!</p>
+	<p>For those who are looking to take the next step in advancing their percussion abilities, we offer premium content to members of the site. A large collection of videos and written lessons are available only to members.</p>
+	<p>Check out the store page to purchase Curtis Cooper's books and visit the webcam lessons page to learn more about 1 on 1 lessons with Curtis via Skype, oovoo, etc.</p>
 </section>
 

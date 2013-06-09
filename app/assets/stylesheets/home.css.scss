@@ -1,7 +1,16 @@
+#main_image {
+	margin-top: -10px;
+	position: absolute;
+	background: #000000 url('home_large.jpg') center;
+	background-size-x: 100%;
+	background-repeat: no-repeat;
+	height: 500px;
+	width: 100%;
+}
+
 #slideshow {
 	max-width: 960px;
 	height: 500px;
-	background: url('ODTSlide.png') no-repeat -60px -35px;
 	position: relative;
 	color: #555555;
 	overflow: hidden;
@@ -10,23 +19,24 @@
 		padding: 0 20px 10px 20px;
 		position: absolute;
 		width: 370px;
-		top: 50px;
+		top: 145px;
 		right: 50px;
 		color: #555555;
-		// box-shadow: 0 0 8px #aaaaaa;
 
 		ul {
 			margin: 25px 50px 25px 20px;
 			list-style-type: disc;
 
 			li {
+				border-radius: 3px;
+				background-color: #111111;
+				padding: 3px;
 				display: none;
 				font-size: 25px;
-				margin-top: 15px;
+				margin-top: 8px;
 				letter-spacing: 1px;
-				color: #555555;
+				color: #ffffff;
 				font-family: Arial, helvetica, sans-serif;
-				text-shadow: 1px 1px 1px #ffffff;
 			}
 		}
 	}
@@ -59,58 +69,44 @@
 	width: 290px;
 	float: left;
 	height: 280px;
-	margin-top: 45px;
-	margin-bottom: 150px;
+	margin-top: -15px;
+	margin-bottom: 50px;
+	margin-left: 15px;
 	border-radius: 12px;
-	border: 1px solid #f9f9f9;
-	padding: 30px 5px 5px 5px;
-	background-color: #fafafa;
+	border: 3px solid #f0f0f0;
+	padding: 50px 5px 5px 5px;
+	background-color: #e5e5e5;
 
 	.category_title {
 		position: absolute;
-		top: -40px;
-		left: 5px;
-		width: 150px;
-		height: 62px;
+		top: -50px;
+		left: 105px;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: 3px solid #ffffff;
+
 
 		a, a:hover, a:visited {
 			font-family: tahoma, arial, sans-serif;
 			display: block;
-			width: 150px;
-			font-size: 28px;
-			line-height: 62px;
+			width: 80px;
+			font-size: 38px;
+			line-height: 80px;
 			text-align: center;
-			color: #cdcdcd;
-			font-weight: bold;
-			text-shadow: 1px 1px 1px #555555, -1px -1px 1px #555;
+			color: #51819a;
 			text-decoration: none;
+			border-radius: 50%;
+			background-color: #e5e5e5;
+		}
+
+		a:hover {
+			background-color: #eeeeee;
 		}
 	}
 
-	&.blog {
-		border-color: #c0c0c0;
-
-		.cat_box_blog {
-			background: url('cat_box_blog.png') no-repeat;
-		}
-	}
-
-	&.lesson {
-		margin-left: 15px;
-		border-color: #c0c0c0;
-
-		.cat_box_lesson {
-			background: url('cat_box_lessons.png') no-repeat;
-		}
-	}
-
-	&.news {
-		margin-left: 15px;
-		border-color: #c0c0c0;
-
-		.cat_box_news {
-			background: url('cat_box_news.png') no-repeat;
-		}
+	&:first-child {
+		margin-left: 0;
 	}
 
 	.category_box {

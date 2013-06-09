@@ -8,11 +8,17 @@ html, body {
 }
 
 h1, h2, h3, h4, h5 {
-	color: #923a23;
+	color: #51819a;
 	font-family: Tahoma, arial, sans-serif;
 	margin: 15px 0;
 	font-weight: normal;
 	letter-spacing: 1px;
+	font-variant: small-caps;
+}
+
+h1 {
+	font-size: 30px;
+	line-height: 40px;
 }
 
 h1.scripty {
@@ -21,11 +27,7 @@ h1.scripty {
 	font-size: 34px;
 	margin: 10px 0px;
 	font-family: 'AlexBrushRegular', arial, helvetica, sans-serif;
-}
-
-h1 {
-	font-size: 24px;
-	line-height: 40px;
+	font-variant: normal;
 }
 
 h2 {

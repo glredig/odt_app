@@ -3,6 +3,7 @@
 <head>
   <title>Online Drum Teacher | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -46,7 +47,9 @@
 			</ul>
 		</div>
 	</header>
-
+	<% if params[:controller] == 'home' %>
+		<div id="main_image"></div>
+	<% end %>
 	<div class="centered_content">
 		<% flash.each do |key, value| %>
 			<div class="alert alert-<%= key %>"><%= value %></div>
