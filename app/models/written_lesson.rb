@@ -8,7 +8,7 @@ class WrittenLesson < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  after_save :create_feed_item
+  after_create :create_feed_item
   
   def create_feed_item
   	feed = LessonFeed.new

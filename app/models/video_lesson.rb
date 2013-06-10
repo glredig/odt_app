@@ -7,7 +7,7 @@ class VideoLesson < ActiveRecord::Base
 
   accepts_nested_attributes_for :videos, allow_destroy: true
 
-  after_save :create_feed_item
+  after_create :create_feed_item
   	
   def create_feed_item
   	feed = LessonFeed.new
