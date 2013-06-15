@@ -3,6 +3,6 @@
 <hr />
 <span class="post_date pos_fr"><%= @blogpost.created_at.strftime("%-m/%e/%Y") %></span>
 
-<p class="mt30"><%= @blogpost.content.html_safe %></p>
+<p class="mt30"><%= @blogpost.content.gsub(/\n/, '<br />').html_safe %></p>
 
 <%= link_to "Back to list", blogposts_path, class: "pos_fr" %>

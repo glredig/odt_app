@@ -8,6 +8,6 @@
 	<% end %>
 </div>
 
-<p class="mt30"><%= @written_lesson.content.html_safe %></p>
+<p class="mt30"><%= @written_lesson.content.gsub(/\n/, '<br />').html_safe %></p>
 
 <%= link_to 'Back to list', written_lessons_path, class: "pos_fr" %>

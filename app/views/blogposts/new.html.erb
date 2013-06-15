@@ -1,7 +1,6 @@
 <% provide(:title, "New Blog post") %>
 <h1>New Blog entry</h1><br><br>
-<p>To add a line break, enter a <%= p('<br>') %> tag.</p>
-<p>To make something bold, use <%= p('<b></b>') %> tags around it (i.e. <%= p('<b>This text is bold</b>') %>).
+<p>To make something bold or italicized, use <%= p('<b></b>') %>  or <%= p('<i></i>') %> tags around it (i.e. <%= p('<b>This text is bold</b>') %>).
 <br><br>
 <%= form_for(@blogpost) do |f| %>
 	

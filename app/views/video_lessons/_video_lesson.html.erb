@@ -14,7 +14,7 @@
 		<div class="lesson_type_message">members only video</div>
 	<% end %>
 	<div class="blog_content">
-		<%= truncate_html(video_lesson.description.html_safe, length: 800) %>
+		<%= truncate_html(video_lesson.description.gsub(/\n/, '<br />').html_safe, length: 800) %>
 		<br>
 		<% if video_lesson.premium_only %>
 			<% if signed_in? && (admin? || premium?) %>

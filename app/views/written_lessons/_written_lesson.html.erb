@@ -11,7 +11,7 @@
 	<% end %>
 	<hr />
 	<div class="blog_content">
-		<%= truncate_html(written_lesson.content.html_safe, length: 800) %>
+		<%= truncate_html(written_lesson.content.gsub(/\n/, '<br />').html_safe, length: 800) %>
 		<br>
 		<%= link_to "Read this lesson", written_lesson, class: "pos_fr" %>
 	</div>

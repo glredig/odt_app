@@ -7,7 +7,7 @@
 
 <p>
   <b>Description:</b>
-  <%= @video_lesson.description %>
+  <%= @video_lesson.description.gsub(/\n/, '<br />').html_safe %>
 </p>
 
 <p>

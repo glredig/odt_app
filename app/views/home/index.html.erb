@@ -30,7 +30,7 @@
 								<span class='link_title'><%= truncate_html(blogpost.title, length: 35) %></span>
 								<span class='date_added'><%= blogpost.created_at.strftime("%-m/%e/%Y") %></span>
 								<br>
-								<p><%= truncate_html(blogpost.content, length: 100) %></p>
+								<p><%= truncate_html(blogpost.content.html_safe, length: 100) %></p>
 							<% end %>
 						</li>
 					<% end %>
